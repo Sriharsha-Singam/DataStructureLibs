@@ -44,7 +44,7 @@ doubly_linked_list* insert_doubly_linked_list_entry(doubly_linked_list_metadata*
     linked_list_metadata->overall_data_size += sizeof(*value);
     linked_list_metadata->overall_size += sizeof(void*) + sizeof(doubly_linked_list);
 
-    sort_doubly_linked_list();
+    sort_doubly_linked_list(linked_list_metadata);
 
     return new_entry;
 }

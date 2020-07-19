@@ -38,7 +38,7 @@ single_linked_list* insert_single_linked_list_entry(single_linked_list_metadata*
     linked_list_metadata->overall_data_size += sizeof(*value);
     linked_list_metadata->overall_size += sizeof(void*) + sizeof(single_linked_list);
 
-    sort_single_linked_list();
+    sort_single_linked_list(linked_list_metadata);
 
     return new_entry;
 }

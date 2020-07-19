@@ -24,9 +24,10 @@ struct _single_linked_list_metadata {
     linked_list_sorter* sorter;
 };
 
-single_linked_list_metadata* get_single_linked_list_metadata();
 single_linked_list_metadata* single_linked_list_init(linked_list_sorter* sorter);
-single_linked_list* insert_single_linked_list(void* value);
-void sort_single_linked_list();
+single_linked_list* insert_single_linked_list_entry(single_linked_list_metadata* linked_list_metadata, void* value);
+void* remove_single_linked_list_entry(single_linked_list_metadata* linked_list_metadata, single_linked_list* entry);
+void swap_single_linked_list(single_linked_list_metadata* linked_list_metadata, single_linked_list* prev, single_linked_list* next);
+void sort_single_linked_list(single_linked_list_metadata* linked_list_metadata);
 
 #endif //MEMORYLISTS_SINGLELINKEDLISTS_H
