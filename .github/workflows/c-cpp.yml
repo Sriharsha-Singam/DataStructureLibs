@@ -18,8 +18,8 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Single Linked List Static Library
-        path: libs/singlelinkedlists.a
+        path: build_libs/singlelinkedlists.a
     - uses: actions/upload-artifact@v2
       with:
         name: Doubly Linked List Static Library
-        path: libs/doublylinkedlists.a
+        path: build_libs/doublylinkedlists.a
