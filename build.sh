@@ -6,3 +6,5 @@ mkdir libs
 cd build_libs
 cmake ..
 make
+cd ..
+ls -R .
