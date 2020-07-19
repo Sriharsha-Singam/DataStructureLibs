@@ -1,5 +1,5 @@
 //
-// Created by Harsh on 7/18/20.
+// Created by Sriharsha Singam on 7/18/20.
 //
 
 #include "hashtable.h"
