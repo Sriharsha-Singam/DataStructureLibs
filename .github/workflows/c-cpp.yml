@@ -13,17 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: cmake_dir
-      run: mkdir cmake_dir && cd cmake_dir
-    - name: cmake
-      run: cmake ..
-    - name: make
-      run: make
+    - name: build
+      run: sudo build.sh
     - uses: actions/upload-artifact@v2
       with:
         name: Single Linked List Static Library
-        path: cmake_dir/singlelinkedlists.a
+        path: libs/singlelinkedlists.a
     - uses: actions/upload-artifact@v2
       with:
         name: Doubly Linked List Static Library
-        path: cmake_dir/doublylinkedlists.a
+        path: libs/doublylinkedlists.a
