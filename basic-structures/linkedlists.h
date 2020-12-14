@@ -6,6 +6,11 @@
 #define MEMORYLISTS_LINKEDLISTS_H
 
 typedef unsigned char bool;
+typedef unsigned char uint8_t;
+typedef unsigned int uint32_t;
+
+#define TRUE 1
+#define FALSE 0
 
 typedef bool (*linked_list_sorter) (void* value1, void* value2);
 

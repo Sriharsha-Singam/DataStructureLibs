@@ -19,6 +19,8 @@ single_linked_list_metadata* single_linked_list_init(linked_list_sorter* sorter)
     return linked_list_metadata;
 }
 
+// TODO: Specify where to add the new entry.
+// TODO: Apply different method for sorting.
 single_linked_list* insert_single_linked_list_entry(single_linked_list_metadata* linked_list_metadata, void* value) {
 
     if (!linked_list_metadata) return NULL;

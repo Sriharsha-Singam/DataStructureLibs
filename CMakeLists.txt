@@ -1,11 +1,25 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.10)
 project(MemoryLists C)
 
 set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
 
-add_library(singlelinkedlists singlelinkedlists.c singlelinkedlists.h)
-add_library(doublylinkedlists doublylinkedlists.c doublylinkedlists.h)
-add_library(MemoryLists library.c library.h singlelinkedlists.c singlelinkedlists.h hashtable.c hashtable.h doublylinkedlists.c doublylinkedlists.h linkedlists.h)
+add_library(singlelinkedlists STATIC basic-structures/singlelinkedlists.c basic-structures/singlelinkedlists.h)
+add_library(doublylinkedlists STATIC basic-structures/doublylinkedlists.c basic-structures/doublylinkedlists.h)
+add_library(vector STATIC vector.c vector.h)
+
+
+add_library(singlelinkedlistsshared SHARED basic-structures/singlelinkedlists.c basic-structures/singlelinkedlists.h)
+add_library(doublylinkedlistsshared SHARED basic-structures/doublylinkedlists.c basic-structures/doublylinkedlists.h)
+add_library(vectorshared SHARED vector.c vector.h)
+
+set_target_properties(singlelinkedlistsshared PROPERTIES OUTPUT_NAME singlelinkedlists)
+set_target_properties(doublylinkedlistsshared PROPERTIES OUTPUT_NAME doublylinkedlists)
+set_target_properties(vectorshared PROPERTIES OUTPUT_NAME vector)
+
+add_executable(doublylinkedlist_unittest unittests/doublylinkedliststest.c)
+target_link_libraries(doublylinkedlist_unittest ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libdoublylinkedlists.a)
+#add_library(MemoryLists basic-structures/library.c basic-structures/library.h basic-structures/singlelinkedlists.c basic-structures/singlelinkedlists.h basic-structures/hashtable.c basic-structures/hashtable.h basic-structures/doublylinkedlists.c basic-structures/doublylinkedlists.h basic-structures/linkedlists.h)
