@@ -1,5 +1,5 @@
 //
-// Created by INT_ACC on 12/12/2020.
+// Created by Sriharsha Singam on 12/12/2020.
 //
 
 #ifndef MEMORYLISTS_VECTOR_H
@@ -26,5 +26,10 @@ void* vector_pop_back(vector* vector);
 void* vector_pop_front(vector* vector);
 void* vector_at(vector* vector, uint32_t index);
 uint32_t vector_size(vector* vector);
+void vector_print(vector* vector);
+void vector_print_index(vector* vector, uint32_t index);
+bool vector_empty(vector* vector);
+void vector_clear(vector* vector);
+void vector_delete(vector** vector);
 
 #endif //MEMORYLISTS_VECTOR_H
