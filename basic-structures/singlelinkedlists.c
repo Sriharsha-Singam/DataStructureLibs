@@ -8,7 +8,7 @@
 
 single_linked_list_metadata* single_linked_list_init(linked_list_sorter* sorter) {
 
-    single_linked_list_metadata* linked_list_metadata = (single_linked_list_metadata*) malloc(sizeof(single_linked_list_metadata));
+    single_linked_list_metadata* linked_list_metadata = (single_linked_list_metadata*) calloc(1, sizeof(single_linked_list_metadata));
 
     linked_list_metadata->overall_size = 0 + sizeof(single_linked_list_metadata);
     linked_list_metadata->overall_data_size = 0;

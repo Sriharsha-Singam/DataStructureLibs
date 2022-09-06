@@ -33,28 +33,28 @@ int main() {
 
     create_list();
 
-    printf("1\n");
+//    printf("1\n");
     vector* vector = vector_init_create_type(50);
-    printf("2\n");
+//    printf("2\n");
     vector_print(vector);
-    printf("3\n");
+//    printf("3\n");
     for (int i = 0; i < TEST_SIZE; i++) {
         vector_push_back(vector, list_of_pointer[i]);
     }
     printf("%s\n", (char*)vector_at(vector, 2));
-    printf("4\n");
+//    printf("4\n");
     vector_print(vector);
-    printf("5\n");
+//    printf("5\n");
     vector_pop_back(vector);
-    printf("6\n");
+//    printf("6\n");
     vector_print(vector);
-    printf("7\n");
+//    printf("7\n");
     vector_pop_front(vector);
     vector_print(vector);
     vector_delete(&vector);
-    printf("8: %p\n", vector);
+//    printf("8: %p\n", vector);
     vector_print(vector);
-    printf("9\n");
+//    printf("9\n");
 
     free_list();
     return 0;
